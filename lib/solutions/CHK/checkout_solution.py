@@ -40,7 +40,7 @@ def apply_freebees(skus):
         #Remove the letter from the string the amount of times we can
         for discount in range(possible_discounts):
             if letter_dictionary[letter_that_can_be_removed] > 0:
-                letter_dictionary[letter_that_can_be_removed] -= 1
+                letter_dictionary[letter_that_can_be_removed] = letter_dictionary[letter_that_can_be_removed]-1
 
     #Rebuild the string with the letters taken away
     return_string = ""
@@ -95,3 +95,4 @@ def checkout(skus):
                 
         
     return price
+
