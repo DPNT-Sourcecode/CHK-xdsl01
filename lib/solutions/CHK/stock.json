@@ -129,9 +129,9 @@
     "bulk_buy_cost":[50]},
 
     {"item":"#",
-    "core_price":45,
+    "core_price":15,
     "bulk_buys":[1],
-    "bulk_buy_cost":[45]}
+    "bulk_buy_cost":[15]}
 
 
     ]
