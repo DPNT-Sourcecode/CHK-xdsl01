@@ -3,9 +3,17 @@ import logging
 # noinspection PyUnusedLocal
 # skus = unicode string
 
-def checkout(skus):
+"""+------+-------+------------------------+
+| Item | Price | Special offers         |
++------+-------+------------------------+
+| A    | 50    | 3A for 130, 5A for 200 |
+| B    | 30    | 2B for 45              |
+| C    | 20    |                        |
+| D    | 15    |                        |
+| E    | 40    | 2E get one B free      |
++------+-------+------------------------+"""
 
-    stock = [{"item":"A",
+stock = [{"item":"A",
             "core_price":50,
             "bulk_buys":[5,3,1],
             "bulk_buy_cost":[200,130,50],
@@ -35,25 +43,16 @@ def checkout(skus):
             "bulk_buy_cost":[40],
             "freebees":[{"quantity_needed":2,"freebee_item":"B","free_quantity":1}]}
             ]
+#Create a dict to allow us to quickly find the item in question
+stock_lookup = {}
+for index,product in enumerate(stock):
+    stock_lookup[product['item']] = index
+
+def checkout(skus):
 
     items_counter = Counter(skus)
 
-    #Create a dict to allow us to quickly find the item in question
-    stock_lookup = {}
-    for index,product in enumerate(stock):
-        stock_lookup[product['item']] = index
-
     price = 0
-
-    """+------+-------+------------------------+
-    | Item | Price | Special offers         |
-    +------+-------+------------------------+
-    | A    | 50    | 3A for 130, 5A for 200 |
-    | B    | 30    | 2B for 45              |
-    | C    | 20    |                        |
-    | D    | 15    |                        |
-    | E    | 40    | 2E get one B free      |
-    +------+-------+------------------------+"""
 
     for item in items_counter:
 
@@ -76,6 +75,7 @@ def checkout(skus):
                 item_quantity_to_remove = int(number_of_bulk_discounts)*bulk_quantity
                 quantity_of_item -= item_quantity_to_remove
 
+        #Working out the freebees
         if item_details['freebees']:
             for freebee in item_details['freebees']:
                 if items_counter[item] < freebee['quantity_needed']:
@@ -90,7 +90,7 @@ def checkout(skus):
         
     return price
 
-checkout("AAAAAAEEBD6")
+checkout("AABBEE")
 
 
 
