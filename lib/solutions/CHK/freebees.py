@@ -19,17 +19,14 @@ def apply_freebees(skus):
         for discount in range(possible_discounts):
             if item_counter[letter_that_can_be_removed] > 0:
                 item_counter[letter_that_can_be_removed] -= 1
-                print(item_counter[letter_that_can_be_removed])
-                print(item_counter)
 
     #Rebuild the string with the items taken away
     return_string = ""
     for k,v in item_counter.items():
         for i in range(v):
             return_string = return_string+k
-    print(return_string)
+    return return_string
 
-apply_freebees("EEEEEBBBD")
 
 
 

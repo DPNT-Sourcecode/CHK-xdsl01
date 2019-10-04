@@ -1,5 +1,6 @@
 from collections import Counter
 import json
+from freebees import apply_freebees
 # noinspection PyUnusedLocal
 # skus = unicode string
 
@@ -25,7 +26,9 @@ for index,product in enumerate(stock):
 
 def checkout(skus):
 
-    items_counter = Counter(skus)
+    freebees_removed = apply_freebees(skus)
+
+    items_counter = Counter(freebees_removed)
 
     price = 0
 
@@ -77,3 +80,4 @@ def checkout(skus):
     return price
 
 print(checkout("EEEEBB"))
+
