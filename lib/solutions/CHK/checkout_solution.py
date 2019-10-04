@@ -1,6 +1,6 @@
 from collections import Counter
 import json
-from .lib.functions.freebees import apply_freebees
+from freebees import apply_freebees
 # noinspection PyUnusedLocal
 # skus = unicode string
 
@@ -59,6 +59,7 @@ def checkout(skus):
                 
         
     return price
+
 
 
 
