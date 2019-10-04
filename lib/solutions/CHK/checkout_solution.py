@@ -31,7 +31,7 @@ def apply_freebees(skus):
             s = s.replace(freebee['letter_removal'],"",1)
     return s
 #group discounts - SAME AS ABOVE
-def group_discounts(s):
+def apply_group_discounts(s):
     #Identifying the products applicable for the group discount
     qualifying_letters = []
     for letter in s:
@@ -65,7 +65,7 @@ for index,product in enumerate(stock):
 
 def checkout(skus):
 
-    group_applied = group_discounts(skus)
+    group_applied = apply_group_discounts(skus)
     #You get items for free dependant on how many you buy of other items.
     #The first port of call is to remove those items before working out your bulk purchase discounts.
     freebees_removed = apply_freebees(group_applied)
@@ -98,4 +98,5 @@ def checkout(skus):
                 quantity_of_item -= item_quantity_to_remove
     
     return price
+
 

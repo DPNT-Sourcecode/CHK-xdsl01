@@ -49,9 +49,9 @@
     "bulk_buy_cost":[60]},
 
     {"item":"K",
-    "core_price":80,
+    "core_price":70,
     "bulk_buys":[2,1],
-    "bulk_buy_cost":[150,80]},
+    "bulk_buy_cost":[120,70]},
 
     {"item":"L",
     "core_price":90,
@@ -135,3 +135,4 @@
 
 
     ]
+
