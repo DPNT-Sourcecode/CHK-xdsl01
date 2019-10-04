@@ -32,11 +32,12 @@ def apply_freebees(skus):
     return s
 #group discounts - SAME AS ABOVE
 def group_discounts(s):
+    #Identifying the products applicable for the group discount
     qualifying_letters = []
     for letter in s:
         if letter in ("S","T","X","Y","Z"):
             qualifying_letters.append(letter)
-    
+    #Check if we have enough
     if len(qualifying_letters) < 3:
         return s
     
@@ -97,3 +98,4 @@ def checkout(skus):
                 quantity_of_item -= item_quantity_to_remove
     
     return price
+

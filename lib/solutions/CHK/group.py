@@ -7,7 +7,7 @@ stock_lookup = {}
 for index,product in enumerate(stock):
     stock_lookup[product['item']] = index
 
-def rplace_group(s):
+def group_discounts(s):
     qualifying_letters = []
     for letter in s:
         if letter in ("S","T","X","Y","Z"):
@@ -30,7 +30,8 @@ def rplace_group(s):
     return s
 
 
-print(rplace_group("ABCSTXZZZYY"))
+
+
 
 
 
