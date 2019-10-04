@@ -77,8 +77,10 @@ def checkout(skus):
                 quantity_of_item -= item_quantity_to_remove
 
         if item_details['freebees']:
+            print(item_details['freebees'])
             for freebee in item_details['freebees']:
-                if quantity_of_item < freebee['quantity_needed']:
+                if items_counter[item] < freebee['quantity_needed']:
+                    # print(f"we had{quantity_of_item} and needed {freebee['quantity_needed']}")
                     continue
                 if freebee['freebee_item'] in skus:
                     print(freebee['freebee_item'])
@@ -89,5 +91,6 @@ def checkout(skus):
     return price
 
 checkout("AAAAAAEEBD")
+
 
 
