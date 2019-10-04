@@ -26,6 +26,8 @@ for index,product in enumerate(stock):
 
 def checkout(skus):
 
+    #You get items for free dependant on how many you buy of other items.
+    #The first port of call is to remove those items before working out your bulk purchase discounts
     freebees_removed = apply_freebees(skus)
 
     items_counter = Counter(freebees_removed)
@@ -55,3 +57,4 @@ def checkout(skus):
                 
         
     return price
+
