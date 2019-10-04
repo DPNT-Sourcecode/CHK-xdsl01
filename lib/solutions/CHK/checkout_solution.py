@@ -74,7 +74,7 @@ def checkout(skus):
 
     for item in items_counter:
 
-        if item not in stock_lookup.keys():
+        if item not in list(stock_lookup):
             return -1
 
         item_details = stock[stock_lookup[item]]
