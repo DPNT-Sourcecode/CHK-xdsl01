@@ -23,7 +23,7 @@ def checkout(skus):
 
         if item not in pricing.keys():
             logging.info(f"{item} not in pricing library")
-            continue
+            return -1
 
         quantity_of_item = items_counter[item]
 
@@ -43,6 +43,7 @@ def checkout(skus):
             price += total_items_cost
         
     return price
+
 
 
 
