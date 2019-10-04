@@ -4,7 +4,6 @@ freebee_list = [{"letter_needed":"E","quantity_needed":2,"letter_removal":"B"}]
 freebee_lookup = {}
 for index,product in enumerate(freebee_list):
     freebee_lookup[product['letter_needed']] = index
-print(freebee_lookup)
 def apply_freebees(skus):
     item_counter = dict(Counter(skus))
     print(item_counter)
@@ -15,11 +14,15 @@ def apply_freebees(skus):
         possible_discounts = int(v/freebee_list[freebee_lookup[k]]["quantity_needed"])
         print(possible_discounts)
         letter_that_can_be_removed = freebee_list[freebee_lookup[k]]["letter_removal"]
-        print(item_counter.get(letter_that_can_be_removed,possible_discounts+1))
         items_that_can_be_removed = int(possible_discounts/item_counter.get(letter_that_can_be_removed,possible_discounts+1))
         print(items_that_can_be_removed)
-        if items_that_can_be_removed > 0:
-            item_counter[letter_that_can_be_removed] -= items_that_can_be_removed
+
+        if possible_discounts >= items_that_can_be_removed:
+            for discount in range(possible_discounts):
+                item_counter[letter_that_can_be_removed] - 1
+
+        # if items_that_can_be_removed > 0:
+        #     item_counter[letter_that_can_be_removed] -= items_that_can_be_removed
 
     return_string = ""
     for k,v in item_counter.items():
@@ -28,6 +31,7 @@ def apply_freebees(skus):
     print(return_string)
 
 apply_freebees("EEEEBBD")
+
 
 
 
