@@ -41,7 +41,7 @@ def checkout(skus):
     #Create a dict to allow us to quickly find the item in question
     stock_lookup = {}
     for index,product in enumerate(stock):
-        stock_lookup[product[product]] = index
+        stock_lookup[product['item']] = index
 
     price = 0
 
@@ -69,14 +69,16 @@ def checkout(skus):
             continue
 
         while quantity_of_item > 0:
-            for i,bulk_quantity in enumerate(item["bulk_buys"]):
+            for i,bulk_quantity in enumerate(item_details["bulk_buys"]):
                 number_of_bulk_discounts = quantity_of_item/bulk_quantity
                 if number_of_bulk_discounts < 1:
                     continue
                 
                 price_for_this_bulk = int(number_of_bulk_discounts) * item_details["bulk_buy_cost"][i]
                 price += price_for_this_bulk
-                quantity_of_item -= number_of_bulk_discounts*bulk_quantity
+                item_quantity_to_remove = number_of_bulk_discounts*bulk_quantity
+                quantity_of_item -= item_quantity_to_remove
+                print(f"{quantity_of_item} because we removed {item_quantity_to_remove}")
 
 
     print(price)
@@ -86,4 +88,5 @@ def checkout(skus):
     return price
 
 checkout("AAAAAA")
+
 
