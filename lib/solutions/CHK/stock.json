@@ -126,6 +126,12 @@
     {"item":"Z",
     "core_price":50,
     "bulk_buys":[1],
-    "bulk_buy_cost":[50]}
+    "bulk_buy_cost":[50]},
+
+    {"item":"#",
+    "core_price":45,
+    "bulk_buys":[1],
+    "bulk_buy_cost":[45]}
+
 
     ]
