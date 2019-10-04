@@ -30,10 +30,31 @@ def apply_freebees(skus):
         for i in range(number_of_discounts):
             s = s.replace(freebee['letter_removal'],"",1)
     return s
+#group discounts - SAME AS ABOVE
+def group_discounts(s):
+    qualifying_letters = []
+    for letter in s:
+        if letter in ("S","T","X","Y","Z"):
+            qualifying_letters.append(letter)
+    
+    if len(qualifying_letters) < 3:
+        return s
+    
+    group_discounts_allowed = int(len(qualifying_letters)/3)
 
+    #we want to put the most expensive items into the group of 3 to make £45
+    list_of_letters_and_cost =[{"item":stock[stock_lookup[letter]]['item'],
+                                "core_price":stock[stock_lookup[letter]]['core_price']} for letter in qualifying_letters]
+    list_of_letters_high_to_low = sorted(list_of_letters_and_cost, key=lambda letter:letter['core_price'],reverse=True)
+    to_replace = [i['item'] for i in list_of_letters_high_to_low][:group_discounts_allowed*3]
+    
+    for letter in to_replace:
+        s = s.replace(letter,"#",1)
+    
+    return s
 #Load out stock from a json file, otherwise this could get massive
-#
-with open("./lib/solutions/CHK/stock.json",'r') as f:
+#./lib/solutions/CHK/
+with open("stock.json",'r') as f:
     stock = json.load(f)
 
 #Create a dict to allow us to quickly find the item in question
@@ -43,9 +64,10 @@ for index,product in enumerate(stock):
 
 def checkout(skus):
 
+    group_applied = group_discounts(skus)
     #You get items for free dependant on how many you buy of other items.
     #The first port of call is to remove those items before working out your bulk purchase discounts.
-    freebees_removed = apply_freebees(skus)
+    freebees_removed = apply_freebees(group_applied)
 
     #Now that the freebees are removed, we can go ahead and work out the cost taking the bulk
     #purchases into account.
@@ -73,6 +95,5 @@ def checkout(skus):
 
                 item_quantity_to_remove = int(number_of_bulk_discounts)*bulk_quantity
                 quantity_of_item -= item_quantity_to_remove
-                
-        
+    
     return price

@@ -89,9 +89,9 @@
     "bulk_buy_cost":[50]},
 
     {"item":"S",
-    "core_price":30,
+    "core_price":20,
     "bulk_buys":[1],
-    "bulk_buy_cost":[30]},
+    "bulk_buy_cost":[20]},
 
     {"item":"T",
     "core_price":20,
@@ -114,19 +114,19 @@
     "bulk_buy_cost":[20]},
 
     {"item":"X",
-    "core_price":90,
+    "core_price":17,
     "bulk_buys":[1],
-    "bulk_buy_cost":[90]},
+    "bulk_buy_cost":[17]},
 
     {"item":"Y",
-    "core_price":10,
+    "core_price":20,
     "bulk_buys":[1],
-    "bulk_buy_cost":[10]},
+    "bulk_buy_cost":[20]},
 
     {"item":"Z",
-    "core_price":50,
+    "core_price":21,
     "bulk_buys":[1],
-    "bulk_buy_cost":[50]},
+    "bulk_buy_cost":[21]},
 
     {"item":"#",
     "core_price":15,
