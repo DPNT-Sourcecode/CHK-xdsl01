@@ -19,20 +19,20 @@ def checkout(skus):
 
             {"item":"C",
             "core_price":20,
-            "bulk_buys":[],
-            "bulk_buy_cost":[],
+            "bulk_buys":[1],
+            "bulk_buy_cost":[20],
             "freebees":[]},
 
             {"item":"D",
             "core_price":15,
-            "bulk_buys":[],
-            "bulk_buy_cost":[],
+            "bulk_buys":[1],
+            "bulk_buy_cost":[15],
             "freebees":[]},
 
             {"item":"E",
             "core_price":40,
-            "bulk_buys":[],
-            "bulk_buy_cost":[],
+            "bulk_buys":[1],
+            "bulk_buy_cost":[40],
             "freebees":[{"quantity_needed":2,"freebee_item":"B","free_quantity":1}]}
             ]
 
@@ -63,10 +63,10 @@ def checkout(skus):
         item_details = stock[stock_lookup[item]]
         quantity_of_item = items_counter[item]
 
-        if quantity_of_item < min(item_details["bulk_buys"]):
-            price += quantity_of_item*item_details["core_price"]
-            quantity_of_item -= quantity_of_item
-            continue
+        # if quantity_of_item < min(item_details["bulk_buys"]):
+        #     price += quantity_of_item*item_details["core_price"]
+        #     quantity_of_item -= quantity_of_item
+        #     continue
 
         while quantity_of_item > 0:
             for i,bulk_quantity in enumerate(item_details["bulk_buys"]):
@@ -76,7 +76,8 @@ def checkout(skus):
                 
                 price_for_this_bulk = int(number_of_bulk_discounts) * item_details["bulk_buy_cost"][i]
                 price += price_for_this_bulk
-                item_quantity_to_remove = number_of_bulk_discounts*bulk_quantity
+
+                item_quantity_to_remove = int(number_of_bulk_discounts)*bulk_quantity
                 quantity_of_item -= item_quantity_to_remove
                 print(f"{quantity_of_item} because we removed {item_quantity_to_remove}")
 
@@ -87,6 +88,6 @@ def checkout(skus):
         
     return price
 
-checkout("AAAAAA")
+checkout("AAAAAAD")
 
 
