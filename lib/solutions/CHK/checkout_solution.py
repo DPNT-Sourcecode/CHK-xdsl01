@@ -15,13 +15,14 @@ import json
 +------+-------+------------------------+"""
 
 #freebees - THIS WAS A SEPARATE MODULE, BUT I COULDN'T GET THE IMPORT TO WORK SO I WAS UNABLE TO DEPLOY
-freebee_list = [{"letter_needed":"E","quantity_needed":2,"letter_removal":"B"}]
 
-freebee_lookup = {}
-for index,product in enumerate(freebee_list):
-    freebee_lookup[product['letter_needed']] = index
 
 def apply_freebees(skus):
+    freebee_list = [{"letter_needed":"E","quantity_needed":2,"letter_removal":"B"}]
+
+    freebee_lookup = {}
+    for index,product in enumerate(freebee_list):
+        freebee_lookup[product['letter_needed']] = index
     
     #create a letter dictionary so we can start removing occurances according to the freebees
     letter_dictionary = dict(Counter(skus))
@@ -95,4 +96,3 @@ def checkout(skus):
                 
         
     return price
-
