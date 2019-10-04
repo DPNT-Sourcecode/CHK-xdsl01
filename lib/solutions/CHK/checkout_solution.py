@@ -8,7 +8,8 @@ def checkout(skus):
                 "B":30,
                 "C":20,
                 "D":15}
-    discounts = ("A","B")
+    discounts = {"A":3,
+                "B":2}
 
     items_counter = Counter(skus)
 
@@ -21,16 +22,19 @@ def checkout(skus):
             price += pricing[item] * quantity_of_item
             continue
         
-        if item == "A" and quantity_of_item >= 3:
-            
-        else:
+        if quantity_of_item < discounts[item]:
             price += pricing[item] * quantity_of_item
+        else:
+            number_of_applicaple_discounts = quantity_of_item/discounts[item]
+            print(item,int(number_of_applicaple_discounts))
+            
     
 
 
     
 
-checkout("AAABCD")
+checkout("AAAABCD")
+
 
 
 
