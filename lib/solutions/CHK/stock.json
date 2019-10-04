@@ -21,5 +21,11 @@
     {"item":"E",
     "core_price":40,
     "bulk_buys":[1],
-    "bulk_buy_cost":[40]}
+    "bulk_buy_cost":[40]},
+    
+    {"item":"F",
+    "core_price":10,
+    "bulk_buys":[1],
+    "bulk_buy_cost":[10]}
+
     ]

@@ -16,7 +16,8 @@ import json
 
 #freebees - THIS WAS A SEPARATE MODULE, BUT I COULDN'T GET THE IMPORT TO WORK SO I WAS UNABLE TO DEPLOY
 def apply_freebees(skus):
-    freebee_list = [{"letter_needed":"E","quantity_needed":2,"letter_removal":"B"}]
+    freebee_list = [{"letter_needed":"E","quantity_needed":2,"letter_removal":"B"},
+                    {"letter_needed":"F","quantity_needed":3,"letter_removal":"F"}]
     s = skus
     for freebee in freebee_list:
         number_of_discounts = int(s.count(freebee['letter_needed'])/freebee['quantity_needed'])
@@ -27,7 +28,7 @@ def apply_freebees(skus):
     return s
 
 #Load out stock from a json file, otherwise this could get massive
-with open("./lib/solutions/CHK/stock.json",'r') as f:
+with open("stock.json",'r') as f:
     stock = json.load(f)
 
 #Create a dict to allow us to quickly find the item in question
