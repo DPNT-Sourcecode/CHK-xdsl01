@@ -1,5 +1,5 @@
 from collections import Counter
-
+import logging
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus):
@@ -18,6 +18,10 @@ def checkout(skus):
     price = 0
 
     for item in items_counter:
+
+        if item not in pricing.keys():
+            logging.info(f"{item} not in pricing library")
+
         quantity_of_item = items_counter[item]
 
         if item not in discounts:
@@ -29,11 +33,15 @@ def checkout(skus):
         else:
             number_of_applicaple_discounts = quantity_of_item/discounts[item]
             remaining_quantity_outside_discount = quantity_of_item-(int(number_of_applicaple_discounts)*discounts[item])
-            total_items_cost = int(number_of_applicaple_discounts)*discounts
+            total_items_cost = (int(number_of_applicaple_discounts)*discounts_offer[item]) + (remaining_quantity_outside_discount*pricing[item])
+            price += total_items_cost
+        
+    print(price)
             
     
 
 
     
 
-checkout("AAAAABCD")
+checkout("AAAAABCGD")
+
