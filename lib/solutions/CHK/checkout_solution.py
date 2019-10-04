@@ -30,7 +30,7 @@ def apply_freebees(skus):
     for letter,occurance in letter_dictionary.items():
 
         #Let's ignore the letters that don't apply discounts
-        if letter not in freebee_lookup.keys():
+        if letter not in list(freebee_lookup):
             continue
 
         #How many times we can apply a discount
