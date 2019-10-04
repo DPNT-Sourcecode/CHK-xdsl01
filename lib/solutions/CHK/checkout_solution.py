@@ -8,23 +8,27 @@ def checkout(skus):
     stock = [{"item":"A",
             "core_price":50,
             "bulk_buys":[5,3],
-            "freebees":[{[]},
+            "freebees":[]},
+
             {"item":"B",
             "core_price":30,
             "bulk_buys":[(2,45)],
-            "freebees":[{[]},
+            "freebees":[]},
+
             {"item":"C",
             "core_price":20,
             "bulk_buys":[],
-            "freebees":[{[]},
+            "freebees":[]},
+
             {"item":"D",
             "core_price":15,
             "bulk_buys":[],
-            "freebees":[{[]},
+            "freebees":[]},
+
             {"item":"E",
             "core_price":40,
             "bulk_buys":[],
-            "freebees":[{"quantity_needed":2,"freebee_item":"B","free_quantity":1}]
+            "freebees":[{"quantity_needed":2,"freebee_item":"B","free_quantity":1}]}
             ]
 
     items_counter = Counter(skus)
@@ -36,5 +40,6 @@ def checkout(skus):
         
         
     return price
+
 
 
