@@ -2,18 +2,54 @@ from collections import Counter
 import logging
 # noinspection PyUnusedLocal
 # skus = unicode string
-def checkout(skus):
 
-    #Lookups for the pricing and for any discounts that may be applied
-    #We use 2 dicts to confirm the discount quantities and what the offer is
-    pricing = {"A":50,
+"""   pricing = {"A":50,
                 "B":30,
                 "C":20,
                 "D":15}
     discount_quantities = {"A":3,
                 "B":2}
     discount_offer = {"A":130,
-                        "B":45}
+                        "B":45}"""
+
+
+"""+------+-------+------------------------+
+| Item | Price | Special offers         |
++------+-------+------------------------+
+| A    | 50    | 3A for 130, 5A for 200 |
+| B    | 30    | 2B for 45              |
+| C    | 20    |                        |
+| D    | 15    |                        |
+| E    | 40    | 2E get one B free      |
++------+-------+------------------------+"""
+#
+def checkout(skus):
+
+    stock = [{"item":"A",
+            "core_price":50,
+            "bulk_buys":[5,3],
+            "freebees":[{[]},
+            {"item":"B",
+            "core_price":30,
+            "bulk_buys":[(2,45)],
+            "freebees":[{[]},
+            {"item":"C",
+            "core_price":20,
+            "bulk_buys":[],
+            "freebees":[{[]},
+            {"item":"D",
+            "core_price":15,
+            "bulk_buys":[],
+            "freebees":[{[]},
+            {"item":"E",
+            "core_price":40,
+            "bulk_buys":[],
+            "freebees":[{"quantity_needed":2,"freebee_item":"B","free_quantity":1}
+            ]
+
+    #Lookups for the pricing and for any discounts that may be applied
+    #We use 2 dicts to confirm the discount quantities and what the offer is
+ 
 
     items_counter = Counter(skus)
 
@@ -43,4 +79,5 @@ def checkout(skus):
             price += total_items_cost
         
     return price
+
 
