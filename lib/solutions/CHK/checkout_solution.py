@@ -63,16 +63,18 @@ def checkout(skus):
         item_details = stock[stock_lookup[item]]
         quantity_of_item = items_counter[item]
 
-        if quantity_of_item < min(item["bulk_buys"]):
-            price += quantity_of_item*item["core_price"]
+        if quantity_of_item < min(item_details["bulk_buys"]):
+            price += quantity_of_item*item_details["core_price"]
+            quantity_of_item -= quantity_of_item
             continue
 
-        for i,bulk_quantity in enumerate(item["bulk_buys"]):
-            number_of_bulk_discounts = quantity_of_item/bulk_quantity
-            if number_of_bulk_discounts < 1:
-                continue
-            
-            price_for_this_bulk = int(number_of_bulk_discounts) * item["bulk_buy_cost"][i]
+        while quantity_of_item > 0:
+            for i,bulk_quantity in enumerate(item["bulk_buys"]):
+                number_of_bulk_discounts = quantity_of_item/bulk_quantity
+                if number_of_bulk_discounts < 1:
+                    continue
+                
+                price_for_this_bulk = int(number_of_bulk_discounts) * item_details["bulk_buy_cost"][i]
 
 
 
@@ -80,11 +82,4 @@ def checkout(skus):
         
         
     return price
-
-
-
-
-
-
-
 
