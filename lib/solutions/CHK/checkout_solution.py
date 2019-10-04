@@ -33,13 +33,24 @@ def checkout(skus):
 
     items_counter = Counter(skus)
 
+    #Create a dict to allow us to quickly find the item in question
+    stock_lookup = {}
+    for index,product in enumerate(stock):
+        stock_lookup[product[item]] = index
+
     price = 0
 
     for item in items_counter:
 
+        if item not in stock_lookup.keys():
+            return -1
+
+        item_details = stock[stock_lookup[item]]
+
         
         
     return price
+
 
 
 
