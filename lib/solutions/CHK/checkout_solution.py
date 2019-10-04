@@ -14,7 +14,8 @@ import json
 +------+-------+------------------------+"""
 
 #Load out stock from a json file, otherwise this could get massive
-with open("./lib/solutions/CHK/stock.json",'r') as f:
+#./lib/solutions/CHK/stock.json
+with open("stock.json",'r') as f:
     stock = json.load(f)
 
 #Create a dict to allow us to quickly find the item in question
@@ -50,21 +51,22 @@ def checkout(skus):
                 quantity_of_item -= item_quantity_to_remove
 
         #Working out the freebees
-        if item_details['freebees']:
-            for freebee in item_details['freebees']:
-                if items_counter[item] < freebee['quantity_needed']:
-                    continue
-                if freebee['freebee_item'] in skus:
-                    free_item = stock[stock_lookup[freebee['freebee_item']]]
-                    price -= freebee['free_quantity']*free_item['core_price']
+        # if item_details['freebees']:
+        #     for freebee in item_details['freebees']:
+        #         if items_counter[item] < freebee['quantity_needed']:
+        #             continue
+        #         if freebee['freebee_item'] in skus:
+        #             free_item = stock[stock_lookup[freebee['freebee_item']]]
+        #             price -= freebee['free_quantity']*free_item['core_price']
 
         if item_details['freebees']:
            for freebee in item_details['freebees']:
                 if items_counter[item] < freebee['quantity_needed']:
                     continue
                 possible_discounts_to_be_applied = items_counter[item]/freebee['quantity_needed']
-                while int(possible_discounts_to_be_applied) > 0:
-                    
+                items_that_can_be_removed = items_counter[freebee['discounted_item']]
+                number_of_items_to_remove = possible_discounts_to_be_applied/items_that_can_be_removed
+                price -= int(number_of_items_to_remove)*freebee['reduction']
                 
         
     return price
