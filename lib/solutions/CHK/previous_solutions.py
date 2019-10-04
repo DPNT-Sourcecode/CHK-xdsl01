@@ -1,4 +1,22 @@
-for item in items_counter:
+#1
+def checkout(skus):
+
+    #Lookups for the pricing and for any discounts that may be applied
+    #We use 2 dicts to confirm the discount quantities and what the offer is
+    pricing = {"A":50,
+                "B":30,
+                "C":20,
+                "D":15}
+    discount_quantities = {"A":3,
+                "B":2}
+    discount_offer = {"A":130,
+                        "B":45}
+
+    items_counter = Counter(skus)
+
+    price = 0
+
+    for item in items_counter:
 
         if item not in pricing.keys():
             logging.info(f"{item} not in pricing library")
@@ -20,3 +38,6 @@ for item in items_counter:
             #Work out the final cost for that item
             total_items_cost = (int(number_of_applicaple_discounts)*discount_offer[item]) + (remaining_quantity_outside_discount*pricing[item])
             price += total_items_cost
+        
+    return price
+

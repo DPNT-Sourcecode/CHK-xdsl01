@@ -1,5 +1,5 @@
 from collections import Counter
-import logging
+import json
 # noinspection PyUnusedLocal
 # skus = unicode string
 
@@ -13,36 +13,10 @@ import logging
 | E    | 40    | 2E get one B free      |
 +------+-------+------------------------+"""
 
-stock = [{"item":"A",
-            "core_price":50,
-            "bulk_buys":[5,3,1],
-            "bulk_buy_cost":[200,130,50],
-            "freebees":[]},
+#Load out stock from a json file, otherwise this could get massive
+with open("stock.json",'r') as f:
+    stock = json.load(f)
 
-            {"item":"B",
-            "core_price":30,
-            "bulk_buys":[2,1],
-            "bulk_buy_cost":[45,30],
-            "freebees":[]},
-
-            {"item":"C",
-            "core_price":20,
-            "bulk_buys":[1],
-            "bulk_buy_cost":[20],
-            "freebees":[]},
-
-            {"item":"D",
-            "core_price":15,
-            "bulk_buys":[1],
-            "bulk_buy_cost":[15],
-            "freebees":[]},
-
-            {"item":"E",
-            "core_price":40,
-            "bulk_buys":[1],
-            "bulk_buy_cost":[40],
-            "freebees":[{"quantity_needed":2,"freebee_item":"B","free_quantity":1}]}
-            ]
 #Create a dict to allow us to quickly find the item in question
 stock_lookup = {}
 for index,product in enumerate(stock):
