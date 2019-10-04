@@ -5,7 +5,6 @@ class TestCheckout(unittest.TestCase):
 
     def test_checkout(self):
         self.assertEqual(checkout_solution.checkout("AABBEE"),210)
-        self.assertEqual(checkout_solution.checkout("ABCDEGX"),-1)
         self.assertEqual(checkout_solution.checkout("AAAAAA"),250)
         self.assertEqual(checkout_solution.checkout("EEEEBB"),160)
         self.assertEqual(checkout_solution.checkout("BEBEEE"),160)
@@ -16,6 +15,8 @@ class TestCheckout(unittest.TestCase):
     def test_apply_freebees(self):
         self.assertEqual(checkout_solution.apply_freebees("FFF"),"FF")
         self.assertEqual(checkout_solution.apply_freebees("BEBEEEFFF"),"EEEEFF")
+        self.assertEqual(checkout_solution.apply_freebees("RRRQ"),"RRR")
+        self.assertEqual(checkout_solution.apply_freebees("MNNNM"),"NNNM")
 
 if __name__ == "__main__":
     unittest.main()

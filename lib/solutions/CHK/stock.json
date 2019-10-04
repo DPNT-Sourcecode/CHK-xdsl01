@@ -26,6 +26,106 @@
     {"item":"F",
     "core_price":10,
     "bulk_buys":[1],
-    "bulk_buy_cost":[10]}
+    "bulk_buy_cost":[10]},
+    
+    {"item":"G",
+    "core_price":20,
+    "bulk_buys":[1],
+    "bulk_buy_cost":[20]},
+
+    {"item":"H",
+    "core_price":10,
+    "bulk_buys":[10,5,1],
+    "bulk_buy_cost":[80,45,10]},
+
+    {"item":"I",
+    "core_price":35,
+    "bulk_buys":[1],
+    "bulk_buy_cost":[35]},
+
+    {"item":"J",
+    "core_price":60,
+    "bulk_buys":[1],
+    "bulk_buy_cost":[60]},
+
+    {"item":"K",
+    "core_price":80,
+    "bulk_buys":[2,1],
+    "bulk_buy_cost":[150,80]},
+
+    {"item":"L",
+    "core_price":90,
+    "bulk_buys":[1],
+    "bulk_buy_cost":[90]},
+
+    {"item":"M",
+    "core_price":15,
+    "bulk_buys":[1],
+    "bulk_buy_cost":[15]},
+
+    {"item":"N",
+    "core_price":40,
+    "bulk_buys":[1],
+    "bulk_buy_cost":[40]},
+
+    {"item":"O",
+    "core_price":10,
+    "bulk_buys":[1],
+    "bulk_buy_cost":[10]},
+
+    {"item":"P",
+    "core_price":50,
+    "bulk_buys":[5,1],
+    "bulk_buy_cost":[200,50]},
+
+    {"item":"Q",
+    "core_price":30,
+    "bulk_buys":[3,1],
+    "bulk_buy_cost":[80,30]},
+
+    {"item":"R",
+    "core_price":50,
+    "bulk_buys":[1],
+    "bulk_buy_cost":[50]},
+
+    {"item":"S",
+    "core_price":30,
+    "bulk_buys":[1],
+    "bulk_buy_cost":[30]},
+
+    {"item":"T",
+    "core_price":20,
+    "bulk_buys":[1],
+    "bulk_buy_cost":[20]},
+
+    {"item":"U",
+    "core_price":40,
+    "bulk_buys":[1],
+    "bulk_buy_cost":[40]},
+
+    {"item":"V",
+    "core_price":50,
+    "bulk_buys":[3,2,1],
+    "bulk_buy_cost":[130,96,50]},
+
+    {"item":"W",
+    "core_price":20,
+    "bulk_buys":[1],
+    "bulk_buy_cost":[20]},
+
+    {"item":"X",
+    "core_price":90,
+    "bulk_buys":[1],
+    "bulk_buy_cost":[90]},
+
+    {"item":"Y",
+    "core_price":10,
+    "bulk_buys":[1],
+    "bulk_buy_cost":[10]},
+
+    {"item":"Z",
+    "core_price":50,
+    "bulk_buys":[1],
+    "bulk_buy_cost":[50]}
 
     ]
