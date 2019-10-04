@@ -30,6 +30,8 @@ def checkout(skus):
     #The first port of call is to remove those items before working out your bulk purchase discounts
     freebees_removed = apply_freebees(skus)
 
+    #Now that the freebees are removed, we can go ahead and work out the cost taking the bulk
+    #purchases into account.
     items_counter = Counter(freebees_removed)
 
     price = 0
@@ -57,4 +59,5 @@ def checkout(skus):
                 
         
     return price
+
 
