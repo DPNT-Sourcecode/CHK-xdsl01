@@ -63,11 +63,7 @@ def checkout(skus):
         item_details = stock[stock_lookup[item]]
         quantity_of_item = items_counter[item]
 
-        # if quantity_of_item < min(item_details["bulk_buys"]):
-        #     price += quantity_of_item*item_details["core_price"]
-        #     quantity_of_item -= quantity_of_item
-        #     continue
-
+        #Working out the bulk buys
         while quantity_of_item > 0:
             for i,bulk_quantity in enumerate(item_details["bulk_buys"]):
                 number_of_bulk_discounts = quantity_of_item/bulk_quantity
@@ -79,15 +75,19 @@ def checkout(skus):
 
                 item_quantity_to_remove = int(number_of_bulk_discounts)*bulk_quantity
                 quantity_of_item -= item_quantity_to_remove
-                print(f"{quantity_of_item} because we removed {item_quantity_to_remove}")
 
-
+        if item_details['freebees']:
+            for freebee in item_details['freebees']:
+                if quantity_of_item < freebee['quantity_needed']:
+                    continue
+                if freebee['freebee_item'] in skus:
+                    print(freebee['freebee_item'])
     print(price)
 
         
         
     return price
 
-checkout("AAAAAAD")
+checkout("AAAAAAEEBD")
 
 
