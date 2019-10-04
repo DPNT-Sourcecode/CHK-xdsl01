@@ -20,5 +20,10 @@ class TestCheckout(unittest.TestCase):
         self.assertEqual(checkout_solution.apply_freebees("MNNNM"),"NNNM")
         self.assertEqual(checkout_solution.apply_freebees("UUU"),"UUU")
 
+    def test_apply_group_discounts(self):
+        self.assertEqual(checkout_solution.apply_group_discounts("ABCXY"),"ABCXY")
+        self.assertEqual(checkout_solution.apply_group_discounts("ZZYX"),"###X")
+        self.assertEqual(checkout_solution.apply_group_discounts("ZZXY"),"##X#")
+
 if __name__ == "__main__":
     unittest.main()

@@ -54,8 +54,8 @@ def apply_group_discounts(s):
     
     return s
 #Load out stock from a json file, otherwise this could get massive
-#./lib/solutions/CHK/
-with open("stock.json",'r') as f:
+#
+with open("./lib/solutions/CHK/stock.json",'r') as f:
     stock = json.load(f)
 
 #Create a dict to allow us to quickly find the item in question
