@@ -1,6 +1,6 @@
 from collections import Counter
 import json
-from freebees import apply_freebees
+from lib.solutions.CHK.freebees import apply_freebees
 # noinspection PyUnusedLocal
 # skus = unicode string
 
@@ -15,8 +15,8 @@ from freebees import apply_freebees
 +------+-------+------------------------+"""
 
 #Load out stock from a json file, otherwise this could get massive
-#./lib/solutions/CHK/stock.json
-with open("stock.json",'r') as f:
+
+with open("./lib/solutions/CHK/stock.json",'r') as f:
     stock = json.load(f)
 
 #Create a dict to allow us to quickly find the item in question
@@ -27,7 +27,6 @@ for index,product in enumerate(stock):
 def checkout(skus):
 
     freebees_removed = apply_freebees(skus)
-    print(freebees_removed)
 
     items_counter = Counter(freebees_removed)
 
