@@ -17,6 +17,7 @@ class TestCheckout(unittest.TestCase):
         self.assertEqual(checkout_solution.apply_freebees("BEBEEEFFF"),"EEEEFF")
         self.assertEqual(checkout_solution.apply_freebees("RRRQ"),"RRR")
         self.assertEqual(checkout_solution.apply_freebees("MNNNM"),"NNNM")
+        self.assertEqual(checkout_solution.apply_freebees("UUU"),"UU")
 
 if __name__ == "__main__":
     unittest.main()

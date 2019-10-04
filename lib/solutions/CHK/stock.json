@@ -106,7 +106,7 @@
     {"item":"V",
     "core_price":50,
     "bulk_buys":[3,2,1],
-    "bulk_buy_cost":[130,96,50]},
+    "bulk_buy_cost":[130,90,50]},
 
     {"item":"W",
     "core_price":20,
