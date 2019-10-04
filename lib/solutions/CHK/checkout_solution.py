@@ -27,11 +27,11 @@ def checkout(skus):
 
         quantity_of_item = items_counter[item]
 
-        if item not in discounts:
+        if item not in discount_quantities:
             price += pricing[item] * quantity_of_item
             continue
         
-        if quantity_of_item < discounts[item]:
+        if quantity_of_item < discount_quantities[item]:
             price += pricing[item] * quantity_of_item
         else:
             #We need to check how many of the discounts we can apply to this item.
@@ -43,6 +43,7 @@ def checkout(skus):
             price += total_items_cost
         
     return price
+
 
 
 
