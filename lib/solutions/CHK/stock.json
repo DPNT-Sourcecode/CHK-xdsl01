@@ -26,5 +26,5 @@
     "core_price":40,
     "bulk_buys":[1],
     "bulk_buy_cost":[40],
-    "freebees":[{"quantity_needed":2,"freebee_item":"B","free_quantity":1}]}
+    "freebees":[{"quantity_needed":2,"discounted_item":"B","reduction":-30}]}
     ]
