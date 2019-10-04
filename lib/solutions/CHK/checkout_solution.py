@@ -77,20 +77,20 @@ def checkout(skus):
                 quantity_of_item -= item_quantity_to_remove
 
         if item_details['freebees']:
-            print(item_details['freebees'])
             for freebee in item_details['freebees']:
                 if items_counter[item] < freebee['quantity_needed']:
-                    # print(f"we had{quantity_of_item} and needed {freebee['quantity_needed']}")
                     continue
                 if freebee['freebee_item'] in skus:
-                    print(freebee['freebee_item'])
+                    free_item = stock[stock_lookup[freebee['freebee_item']]]
+                    price -= freebee['free_quantity']*free_item['core_price']
+
     print(price)
 
         
         
     return price
 
-checkout("AAAAAAEEBD")
+checkout("AAAAAAEEBD6")
 
 
 
