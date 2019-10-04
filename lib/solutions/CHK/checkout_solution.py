@@ -15,8 +15,6 @@ import json
 +------+-------+------------------------+"""
 
 #freebees - THIS WAS A SEPARATE MODULE, BUT I COULDN'T GET THE IMPORT TO WORK SO I WAS UNABLE TO DEPLOY
-
-
 def apply_freebees(skus):
     freebee_list = [{"letter_needed":"E","quantity_needed":2,"letter_removal":"B"}]
     s = skus
@@ -27,8 +25,8 @@ def apply_freebees(skus):
         for i in range(number_of_discounts):
             s = s.replace(freebee['letter_removal'],"",1)
     return s
-#Load out stock from a json file, otherwise this could get massive
 
+#Load out stock from a json file, otherwise this could get massive
 with open("./lib/solutions/CHK/stock.json",'r') as f:
     stock = json.load(f)
 
@@ -40,7 +38,7 @@ for index,product in enumerate(stock):
 def checkout(skus):
 
     #You get items for free dependant on how many you buy of other items.
-    #The first port of call is to remove those items before working out your bulk purchase discounts
+    #The first port of call is to remove those items before working out your bulk purchase discounts.
     freebees_removed = apply_freebees(skus)
 
     #Now that the freebees are removed, we can go ahead and work out the cost taking the bulk
