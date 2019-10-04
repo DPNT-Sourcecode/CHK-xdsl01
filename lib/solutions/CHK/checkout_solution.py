@@ -21,7 +21,7 @@ def apply_freebees(skus):
                     {"letter_needed":"F","quantity_needed":3,"letter_removal":"F"},
                     {"letter_needed":"N","quantity_needed":3,"letter_removal":"M"},
                     {"letter_needed":"R","quantity_needed":3,"letter_removal":"Q"},
-                    {"letter_needed":"U","quantity_needed":3,"letter_removal":"U"}]
+                    {"letter_needed":"U","quantity_needed":4,"letter_removal":"U"}]
     s = skus
     for freebee in freebee_list:
         number_of_discounts = int(s.count(freebee['letter_needed'])/freebee['quantity_needed'])
