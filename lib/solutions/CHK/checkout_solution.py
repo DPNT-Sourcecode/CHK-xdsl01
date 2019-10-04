@@ -65,6 +65,13 @@ def checkout(skus):
 
         if quantity_of_item < min(item["bulk_buys"]):
             price += quantity_of_item*item["core_price"]
+            continue
+
+        for i,bulk_quantity in enumerate(item["bulk_buys"]):
+            number_of_bulk_discounts = quantity_of_item/bulk_quantity
+            if number_of_bulk_discounts < 1:
+                continue
+            
 
 
 
@@ -72,6 +79,7 @@ def checkout(skus):
         
         
     return price
+
 
 
 
