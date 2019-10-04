@@ -7,7 +7,10 @@
 def compute(x, y):
     if not all([isinstance(x,int),isinstance(y,int)]):
         raise AttributeError("Both args must be an int")
+    if not x in range(0,100) or y in range(0,100):
+        raise AttributeError("Both args must be between 0 and 100")
     return x + y
 
+print(compute(3,101))
 
 
