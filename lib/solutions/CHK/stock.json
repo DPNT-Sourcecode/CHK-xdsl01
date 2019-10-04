@@ -1,0 +1,30 @@
+[{"item":"A",
+    "core_price":50,
+    "bulk_buys":[5,3,1],
+    "bulk_buy_cost":[200,130,50],
+    "freebees":[]},
+
+    {"item":"B",
+    "core_price":30,
+    "bulk_buys":[2,1],
+    "bulk_buy_cost":[45,30],
+    "freebees":[]},
+
+    {"item":"C",
+    "core_price":20,
+    "bulk_buys":[1],
+    "bulk_buy_cost":[20],
+    "freebees":[]},
+
+    {"item":"D",
+    "core_price":15,
+    "bulk_buys":[1],
+    "bulk_buy_cost":[15],
+    "freebees":[]},
+
+    {"item":"E",
+    "core_price":40,
+    "bulk_buys":[1],
+    "bulk_buy_cost":[40],
+    "freebees":[{"quantity_needed":2,"freebee_item":"B","free_quantity":1}]}
+    ]
