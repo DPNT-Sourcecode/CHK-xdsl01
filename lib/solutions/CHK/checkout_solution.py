@@ -10,6 +10,8 @@ def checkout(skus):
                 "D":15}
     discounts = {"A":3,
                 "B":2}
+    discounts_offer = {"A":130,
+                        "B":45}
 
     items_counter = Counter(skus)
 
@@ -26,16 +28,12 @@ def checkout(skus):
             price += pricing[item] * quantity_of_item
         else:
             number_of_applicaple_discounts = quantity_of_item/discounts[item]
-            print(item,int(number_of_applicaple_discounts))
+            remaining_quantity_outside_discount = quantity_of_item-(int(number_of_applicaple_discounts)*discounts[item])
+            total_items_cost = int(number_of_applicaple_discounts)*discounts
             
     
 
 
     
 
-checkout("AAAABCD")
-
-
-
-
-
+checkout("AAAAABCD")
