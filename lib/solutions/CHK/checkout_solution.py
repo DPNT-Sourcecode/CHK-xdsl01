@@ -62,11 +62,16 @@ def checkout(skus):
         if item_details['freebees']:
            for freebee in item_details['freebees']:
                 if items_counter[item] < freebee['quantity_needed']:
+                    
                     continue
                 possible_discounts_to_be_applied = items_counter[item]/freebee['quantity_needed']
+                print(possible_discounts_to_be_applied)
                 items_that_can_be_removed = items_counter[freebee['discounted_item']]
+                print(items_that_can_be_removed)
                 number_of_items_to_remove = possible_discounts_to_be_applied/items_that_can_be_removed
                 price -= int(number_of_items_to_remove)*freebee['reduction']
                 
         
     return price
+
+checkout("AABBEE")
