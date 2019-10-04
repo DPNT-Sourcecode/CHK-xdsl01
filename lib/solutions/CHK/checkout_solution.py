@@ -27,6 +27,7 @@ for index,product in enumerate(stock):
 def checkout(skus):
 
     freebees_removed = apply_freebees(skus)
+    print(freebees_removed)
 
     items_counter = Counter(freebees_removed)
 
@@ -52,32 +53,8 @@ def checkout(skus):
 
                 item_quantity_to_remove = int(number_of_bulk_discounts)*bulk_quantity
                 quantity_of_item -= item_quantity_to_remove
-
-        #Working out the freebees
-        # if item_details['freebees']:
-        #     for freebee in item_details['freebees']:
-        #         if items_counter[item] < freebee['quantity_needed']:
-        #             continue
-        #         if freebee['freebee_item'] in skus:
-        #             free_item = stock[stock_lookup[freebee['freebee_item']]]
-        #             price -= freebee['free_quantity']*free_item['core_price']
-
-        # if item_details['freebees']:
-        #    for freebee in item_details['freebees']:
-        #         if items_counter[item] < freebee['quantity_needed']:
-                    
-        #             continue
-        #         possible_discounts_to_be_applied = items_counter[item]/freebee['quantity_needed']
-        #         print(possible_discounts_to_be_applied)
-        #         items_that_can_be_removed = items_counter[freebee['discounted_item']]
-        #         if items_that_can_be_removed > 0:
-        #             while possible_discounts_to_be_applied > 0:
-        #                 price -= freebee['reduction']
-        #                 possible_discounts_to_be_applied -=1
-
                 
         
     return price
 
-print(checkout("EEEEBB"))
-
+print(checkout("AABBEE"))
