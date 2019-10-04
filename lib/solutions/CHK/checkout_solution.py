@@ -59,24 +59,23 @@ def checkout(skus):
         #             free_item = stock[stock_lookup[freebee['freebee_item']]]
         #             price -= freebee['free_quantity']*free_item['core_price']
 
-        if item_details['freebees']:
-           for freebee in item_details['freebees']:
-                if items_counter[item] < freebee['quantity_needed']:
+        # if item_details['freebees']:
+        #    for freebee in item_details['freebees']:
+        #         if items_counter[item] < freebee['quantity_needed']:
                     
-                    continue
-                possible_discounts_to_be_applied = items_counter[item]/freebee['quantity_needed']
-                items_that_can_be_removed = items_counter[freebee['discounted_item']]
-                if items_that_can_be_removed > 0:
-                    while possible_discounts_to_be_applied > 0:
-                        price -= freebee['reduction']
-                        possible_discounts_to_be_applied -=1
-                # number_of_items_to_remove = items_that_can_be_removed/possible_discounts_to_be_applied
+        #             continue
+        #         possible_discounts_to_be_applied = items_counter[item]/freebee['quantity_needed']
+        #         print(possible_discounts_to_be_applied)
+        #         items_that_can_be_removed = items_counter[freebee['discounted_item']]
+        #         if items_that_can_be_removed > 0:
+        #             while possible_discounts_to_be_applied > 0:
+        #                 price -= freebee['reduction']
+        #                 possible_discounts_to_be_applied -=1
 
-                # price -= int(number_of_items_to_remove)*freebee['reduction']
                 
         
     return price
 
-checkout("AABBEE")
+print(checkout("EEEE"))
 
 
