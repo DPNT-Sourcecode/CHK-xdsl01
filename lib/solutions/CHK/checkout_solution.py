@@ -8,6 +8,7 @@ def checkout(skus):
     stock = [{"item":"A",
             "core_price":50,
             "bulk_buys":[5,3],
+            "bulk_buy_cost":[200,130],
             "freebees":[]},
 
             {"item":"B",
@@ -40,16 +41,33 @@ def checkout(skus):
 
     price = 0
 
+    """+------+-------+------------------------+
+    | Item | Price | Special offers         |
+    +------+-------+------------------------+
+    | A    | 50    | 3A for 130, 5A for 200 |
+    | B    | 30    | 2B for 45              |
+    | C    | 20    |                        |
+    | D    | 15    |                        |
+    | E    | 40    | 2E get one B free      |
+    +------+-------+------------------------+"""
+
     for item in items_counter:
 
         if item not in stock_lookup.keys():
             return -1
 
         item_details = stock[stock_lookup[item]]
+        quantity_of_item = items_counter[item]
+
+        if quantity_of_item < 
+
+
+
 
         
         
     return price
+
 
 
 
