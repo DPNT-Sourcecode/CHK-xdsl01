@@ -58,12 +58,13 @@ def checkout(skus):
                     free_item = stock[stock_lookup[freebee['freebee_item']]]
                     price -= freebee['free_quantity']*free_item['core_price']
 
-       if item_details['freebees']:
+        if item_details['freebees']:
            for freebee in item_details['freebees']:
-               if items_counter[item] < freebee['quantity_needed']:
+                if items_counter[item] < freebee['quantity_needed']:
                     continue
                 discounts_to_be_applied = items_counter[item]/freebee['quantity_needed']
                 
         
     return price
+
 
