@@ -75,11 +75,12 @@ def checkout(skus):
                     continue
                 
                 price_for_this_bulk = int(number_of_bulk_discounts) * item_details["bulk_buy_cost"][i]
-
+                price += price_for_this_bulk
 
 
 
         
         
     return price
+
 
