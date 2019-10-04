@@ -18,17 +18,11 @@ def rplace_group(s):
     
     group_discounts_allowed = int(len(qualifying_letters)/3)
 
-    od = {}
-    for letter in qualifying_letters:
-        od[stock[stock_lookup[letter]]["item"]] = stock[stock_lookup[letter]]["core_price"]
-    
-    sorted_od = OrderedDict(od)
-
-    qualifying_letters_highest_val_to_lowest = list(sorted_od)
-    print(qualifying_letters_highest_val_to_lowest)
+    print(group_discounts_allowed)
 
 
-rplace_group("ZSTXY")
+rplace_group("ZSYYY")
+
 
 
 
