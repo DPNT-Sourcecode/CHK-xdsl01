@@ -62,9 +62,9 @@ def checkout(skus):
            for freebee in item_details['freebees']:
                 if items_counter[item] < freebee['quantity_needed']:
                     continue
-                discounts_to_be_applied = items_counter[item]/freebee['quantity_needed']
+                possible_discounts_to_be_applied = items_counter[item]/freebee['quantity_needed']
+                while int(possible_discounts_to_be_applied) > 0:
+                    
                 
         
     return price
-
-
