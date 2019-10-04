@@ -18,7 +18,9 @@ def apply_freebees(skus):
         
         while item_counter[letter_that_can_be_removed] > 0:
             for discount in range(possible_discounts):
+                print(item_counter[letter_that_can_be_removed])
                 item_counter[letter_that_can_be_removed] -= 1
+                print(item_counter[letter_that_can_be_removed])
 
     #Rebuild the string with the items taken away
     return_string = ""
@@ -27,7 +29,8 @@ def apply_freebees(skus):
             return_string = return_string+k
     print(return_string)
 
-apply_freebees("EEEEEEEBBBBBBBD")
+apply_freebees("EEEEBBBD")
+
 
 
 
