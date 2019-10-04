@@ -1,6 +1,6 @@
 import json
 from collections import OrderedDict
-with open("./lib/solutions/CHK/stock.json",'r') as f:
+with open("stock.json",'r') as f:
     stock = json.load(f)
 
 stock_lookup = {}
@@ -24,7 +24,11 @@ def rplace_group(s):
     
     sorted_od = OrderedDict(od)
 
+    qualifying_letters_highest_val_to_lowest = list(sorted_od)
+    print(qualifying_letters_highest_val_to_lowest)
 
+
+rplace_group("ZSTXY")
 
 
 
