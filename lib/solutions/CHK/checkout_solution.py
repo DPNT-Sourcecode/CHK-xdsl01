@@ -7,14 +7,14 @@ def checkout(skus):
 
     stock = [{"item":"A",
             "core_price":50,
-            "bulk_buys":[5,3],
-            "bulk_buy_cost":[200,130],
+            "bulk_buys":[5,3,1],
+            "bulk_buy_cost":[200,130,50],
             "freebees":[]},
 
             {"item":"B",
             "core_price":30,
-            "bulk_buys":[2],
-            "bulk_buy_cost":[45],
+            "bulk_buys":[2,1],
+            "bulk_buy_cost":[45,30],
             "freebees":[]},
 
             {"item":"C",
@@ -41,7 +41,7 @@ def checkout(skus):
     #Create a dict to allow us to quickly find the item in question
     stock_lookup = {}
     for index,product in enumerate(stock):
-        stock_lookup[product[item]] = index
+        stock_lookup[product[product]] = index
 
     price = 0
 
@@ -76,11 +76,14 @@ def checkout(skus):
                 
                 price_for_this_bulk = int(number_of_bulk_discounts) * item_details["bulk_buy_cost"][i]
                 price += price_for_this_bulk
+                quantity_of_item -= number_of_bulk_discounts*bulk_quantity
 
 
+    print(price)
 
         
         
     return price
 
+checkout("AAAAAA")
 
