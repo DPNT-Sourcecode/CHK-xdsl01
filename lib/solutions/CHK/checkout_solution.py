@@ -1,6 +1,6 @@
 from collections import Counter
 import json
-from freebees import apply_freebees
+from lib.solutions."CHK".freebees import apply_freebees
 # noinspection PyUnusedLocal
 # skus = unicode string
 
@@ -13,6 +13,9 @@ from freebees import apply_freebees
 | D    | 15    |                        |
 | E    | 40    | 2E get one B free      |
 +------+-------+------------------------+"""
+
+#freebees - THIS WAS A SEPARATE MODULE, BUT I COULDN'T GET THE IMPORT TO WORK
+
 
 #Load out stock from a json file, otherwise this could get massive
 
@@ -59,6 +62,7 @@ def checkout(skus):
                 
         
     return price
+
 
 
 
