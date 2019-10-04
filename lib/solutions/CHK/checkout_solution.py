@@ -4,6 +4,8 @@ import logging
 # skus = unicode string
 def checkout(skus):
 
+    #Lookups for the pricing and for any discounts that may be applied
+    #We use 2 dicts to confirm the discount quantities and what the offer is
     pricing = {"A":50,
                 "B":30,
                 "C":20,
@@ -21,6 +23,7 @@ def checkout(skus):
 
         if item not in pricing.keys():
             logging.info(f"{item} not in pricing library")
+            continue
 
         quantity_of_item = items_counter[item]
 
@@ -36,12 +39,7 @@ def checkout(skus):
             total_items_cost = (int(number_of_applicaple_discounts)*discounts_offer[item]) + (remaining_quantity_outside_discount*pricing[item])
             price += total_items_cost
         
-    print(price)
-            
-    
+    return price
 
 
-    
-
-checkout("AAAAABCGD")
 
