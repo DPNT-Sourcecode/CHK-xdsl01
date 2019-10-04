@@ -72,6 +72,7 @@ def checkout(skus):
             if number_of_bulk_discounts < 1:
                 continue
             
+            price_for_this_bulk = int(number_of_bulk_discounts) * item["bulk_buy_cost"][i]
 
 
 
@@ -79,6 +80,7 @@ def checkout(skus):
         
         
     return price
+
 
 
 
