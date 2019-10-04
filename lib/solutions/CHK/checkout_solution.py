@@ -26,7 +26,6 @@ def apply_freebees(skus):
             continue
         for i in range(number_of_discounts):
             s = s.replace(freebee['letter_removal'],"",1)
-
     return s
 #Load out stock from a json file, otherwise this could get massive
 
