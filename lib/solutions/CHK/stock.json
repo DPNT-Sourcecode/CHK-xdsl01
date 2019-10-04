@@ -1,30 +1,25 @@
 [{"item":"A",
     "core_price":50,
     "bulk_buys":[5,3,1],
-    "bulk_buy_cost":[200,130,50],
-    "freebees":[]},
+    "bulk_buy_cost":[200,130,50]},
 
     {"item":"B",
     "core_price":30,
     "bulk_buys":[2,1],
-    "bulk_buy_cost":[45,30],
-    "freebees":[]},
+    "bulk_buy_cost":[45,30]},
 
     {"item":"C",
     "core_price":20,
     "bulk_buys":[1],
-    "bulk_buy_cost":[20],
-    "freebees":[]},
+    "bulk_buy_cost":[20]},
 
     {"item":"D",
     "core_price":15,
     "bulk_buys":[1],
-    "bulk_buy_cost":[15],
-    "freebees":[]},
+    "bulk_buy_cost":[15]},
 
     {"item":"E",
     "core_price":40,
     "bulk_buys":[1],
-    "bulk_buy_cost":[40],
-    "freebees":[{"quantity_needed":2,"discounted_item":"B","reduction":30}]}
+    "bulk_buy_cost":[40]}
     ]
